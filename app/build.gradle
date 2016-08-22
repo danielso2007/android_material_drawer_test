@@ -24,6 +24,12 @@ dependencies {
     compile('com.mikepenz:materialdrawer:5.5.0@aar') {
         transitive = true
     }
+
     testCompile 'junit:junit:4.12'
+    // https://github.com/mikepenz/Android-Iconics
+    compile 'com.mikepenz:iconics-core:2.8.0@aar'
+    compile 'com.mikepenz:google-material-typeface:2.2.0.3.original@aar'
+    compile 'com.mikepenz:fontawesome-typeface:4.6.0.3@aar'
     compile 'com.android.support:appcompat-v7:24.2.0'
+    compile 'com.android.support:support-v4:24.2.0'
 }

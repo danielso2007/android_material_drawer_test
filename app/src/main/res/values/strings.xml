@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Teste Material Drawer</string>
+    <string name="drawer_item_home">Home</string>
+    <string name="drawer_item_settings">Configuração</string>
+    <string name="drawer_item_logout">Sair</string>
+    <string name="drawer_item_help">Ajuda</string>
+    <string name="drawer_item_aboult">Sobre</string>
+    <string name="back_message">Precione mais uma vez para sair</string>
 </resources>

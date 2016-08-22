@@ -1,5 +1,6 @@
 package br.com.daniel.oliveira.activity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -9,6 +10,7 @@ import android.os.Handler;
 import android.provider.MediaStore;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.content.res.ResourcesCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -82,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
                 .withIcon(FontAwesome.Icon.faw_question_circle_o);
 
         PrimaryDrawerItem itemSair = new PrimaryDrawerItem()
-                .withIdentifier(4)
+                .withIdentifier(5)
                 .withName(R.string.drawer_item_logout)
                 .withIcon(FontAwesome.Icon.faw_sign_out);
 
@@ -151,8 +153,28 @@ public class MainActivity extends AppCompatActivity {
                                 fragmentManager.beginTransaction().replace(R.id.container, new AjudaFragment()).commit();
                                 break;
 
-                            case 4:
-                                MainActivity.this.finish();
+                            case 5:
+                                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+
+                                builder.setMessage("Deseja sair da aplicação?");
+
+                                builder.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int whichButton) {
+                                        finish();
+                                    }
+                                });
+
+                                builder.setNegativeButton("Não", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int whichButton) {
+                                        dialog.cancel();
+                                    }
+                                });
+
+                                AlertDialog alert= builder.create();
+                                alert.show();
+
                                 break;
                         }
                         return Boolean.FALSE;
